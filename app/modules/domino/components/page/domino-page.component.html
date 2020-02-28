@@ -11,24 +11,24 @@
                             class="btn btn-outline-dark">&#8625;</button>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <div class="main-domino">
-                                <button type="button"
-                                        class="btn btn-outline-dark" ng-click="onSelectPart('top')">&#8625;</button>
-                                <div class="half-domino"
-                                     ng-click="onSelectPart('top')"></div>
-                                <div class="half-domino"
-                                     ng-click="onSelectPart('bottom')"></div>
-                                {{dominoModel.selectedFace}}
-                            </div>
+                    <div class="domino-container">
+                        <div class="domino-preferences">
+                            <button type="button"
+                                    class="btn btn-outline-dark"
+                                    ng-click="onSelectPart('top')">&#8625;</button>
+                            <div class="half-domino"
+                                 ng-click="onSelectPart('top')"></div>
+                            <div class="half-domino"
+                                 ng-click="onSelectPart('bottom')"></div>
+                            {{dominoModel.selectedFace}}
                         </div>
-                        <div class="col">
-                            <div class="domino-face-container"
-                                 ng-repeat="face in faceCollection">
-                                {{value}}
-                                <img src="{{getImageUrl(face)}}"
-                                     class="domino-face">
+                        <div class="available-faces-container">
+                            <div class="available-faces">
+                                <div class="available-face-container"
+                                     ng-repeat="face in faceCollection" ng-click="onSelectAvailableFace(face)">
+                                    <img src="{{getImageUrl(face)}}"
+                                         class="available-face">
+                                </div>
                             </div>
                         </div>
                     </div>

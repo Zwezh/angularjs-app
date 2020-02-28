@@ -1,8 +1,36 @@
-.domino-face-container + .domino-face-container {
-    margin-top: 10px;
-    padding-top: 10px;
+.domino-container {
+    display: flex;
+}
+
+.domino-preferences {
+    min-width: 300px;
+}
+.available-faces-container {
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: center;
+}
+.domino-preferences + .available-faces-container {
+    border-left: 1px solid #afafaf;
+}
+
+.available-faces {
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+.available-face-container {
+    box-sizing: border-box;
+    padding: 7px;
+}
+.available-face-container + .available-face-container {
     border-top: 1px solid #000000;
 }
-.domino-face {
+
+.available-face-container:hover {
+    cursor: pointer;
+    background: #f1f1f1;
+}
+
+.available-face {
     height: 50px;
 }

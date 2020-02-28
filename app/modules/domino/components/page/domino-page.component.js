@@ -15,6 +15,9 @@ export default class DominoPageComponent {
             $scope.onSelectPart = (part) => {
                 $scope.dominoModel.selectedFace = part;
             }
+            $scope.onSelectAvailableFace = (value) => {
+                console.log(`${value}`);
+            }
         };
     }
 }
