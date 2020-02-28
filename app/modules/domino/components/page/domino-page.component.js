@@ -4,21 +4,16 @@ import './domino-page.component.css';
 export default class DominoPageComponent {
     constructor() {
         this.template = template;
-        this.controller = ($scope, dominoConstants, DominoModel) => {
-            $scope.dominoModel = new DominoModel();
+        this.controller = ($scope, dominoConstants, ModelService) => {
+            $scope.dominoModel = ModelService.dominoModel;
             $scope.faceCollection = dominoConstants.faces;
-
-            $scope.getImageUrl = function (face) {
-                return dominoConstants.urls.getFaceImageUrl.replace('{{face}}', face);
-            }
-
-            $scope.onSelectPart = (part) => {
-                $scope.dominoModel.selectedFace = part;
-            }
-            $scope.onSelectAvailableFace = (value) => {
-                console.log(`${value}`);
-            }
+            $scope.rotates = dominoConstants.rotates;
+            $scope.getImageUrl = face => ModelService.getImageUrl(face);
+            $scope.onRotateDomino = rotate => { $scope.dominoModel.angle = $scope.dominoModel.angle + rotate; };
+            $scope.onNewDomino = () => { $scope.dominoModel.resetFaces(); }
+            $scope.onSelectAvailableFace = value => { $scope.dominoModel[$scope.dominoModel.selectedFace] = value; }
+            $scope.getDisableFacesClass = () => $scope.dominoModel.selectedFace ? '' : 'domino-faces-lock';
         };
     }
 }
-DominoPageComponent.$inject = ['$scope', 'dominoConstants', 'DominoModel'];
+DominoPageComponent.$inject = ['$scope', 'dominoConstants', 'ModelService'];

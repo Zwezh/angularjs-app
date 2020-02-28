@@ -4,30 +4,28 @@
             <div class="card">
                 <div class="card-header">
                     <button type="button"
-                            class="btn btn-outline-dark">&#8624;</button>
+                            class="btn btn-outline-dark"
+                            ng-click="onRotateDomino(rotates.toRight)">&#8624;</button>
                     <button type="button"
-                            class="btn btn-dark">New</button>
+                            class="btn btn-dark"
+                            ng-click="onNewDomino()">New</button>
                     <button type="button"
-                            class="btn btn-outline-dark">&#8625;</button>
+                            class="btn btn-outline-dark"
+                            ng-click="onRotateDomino(rotates.toRight)">&#8625;</button>
                 </div>
                 <div class="card-body">
                     <div class="domino-container">
                         <div class="domino-preferences">
-                            <button type="button"
-                                    class="btn btn-outline-dark"
-                                    ng-click="onSelectPart('top')">&#8625;</button>
-                            <div class="half-domino"
-                                 ng-click="onSelectPart('top')"></div>
-                            <div class="half-domino"
-                                 ng-click="onSelectPart('bottom')"></div>
-                            {{dominoModel.selectedFace}}
+                            <domino-details></domino-details>
                         </div>
                         <div class="available-faces-container">
-                            <div class="available-faces">
-                                <div class="available-face-container"
-                                     ng-repeat="face in faceCollection" ng-click="onSelectAvailableFace(face)">
+                            <div class="domino-faces"
+                                 ng-class="getDisableFacesClass()">
+                                <div class="domino-face-container"
+                                     ng-repeat="face in faceCollection"
+                                     ng-click="onSelectAvailableFace(face)">
                                     <img src="{{getImageUrl(face)}}"
-                                         class="available-face">
+                                         class="domino-face" />
                                 </div>
                             </div>
                         </div>

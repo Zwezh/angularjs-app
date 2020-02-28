@@ -1,29 +1,22 @@
-.domino-container {
+.domino-details {
     display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.domino-preferences {
-    width: calc(100% - 100px);
-}
-
-.available-faces-container {
-    width: 100px;
-    box-sizing: border-box;
-    padding: 20px;
-    justify-content: center;
-}
-
-.domino-preferences+.available-faces-container {
-    border-left: 1px solid #afafaf;
+.domino {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    height: 250px;
 }
 
 .domino-faces {
+
     border: 1px solid #000000;
     border-radius: 4px;
-}
-
-.domino-faces-lock {
-    opacity: 0.5;
 }
 
 .domino-face-container {
@@ -49,4 +42,20 @@
 .domino-face {
     max-width: 100%;
     max-height: 100%;
+}
+
+.domino-setting {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.label-setting {
+    width: 60px;
+}
+
+.field-setting {
+    width: calc(100% - 65px);
 }

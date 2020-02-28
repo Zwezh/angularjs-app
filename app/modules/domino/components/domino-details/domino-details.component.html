@@ -1,0 +1,43 @@
+<div class="domino-details">
+    <div class="domino"
+         ng-style="getDominoRotation()">
+        <div class="domino-faces">
+            <div class="domino-face-container"
+                 ng-style="getFaceSizeStyle()"
+                 ng-click="onSelectPart(types.top)">
+                <img class="domino-face"
+                     src="{{getImageUrl(dominoModel.top)}}"
+                     ng-if="dominoModel.top" />
+            </div>
+            <div class="domino-face-container"
+                 ng-style="getFaceSizeStyle()"
+                 ng-click="onSelectPart(types.bottom)">
+                <img class="domino-face"
+                     ng-if="dominoModel.bottom"
+                     src="{{getImageUrl(dominoModel.bottom)}}" />
+            </div>
+        </div>
+    </div>
+    <div class="domino-setting">
+        <label class="label-setting"
+               for="size">Size</label>
+        <input class="field-setting"
+               type="range"
+               id="size"
+               name="size"
+               ng-model="dominoModel.size"
+               min="{{size.min}}"
+               max="{{size.max}}" />
+    </div>
+    <div class="domino-setting">
+        <label class="label-setting"
+               for="speed">Speed</label>
+        <input class="field-setting"
+               type="range"
+               id="speed"
+               name="speed"
+               ng-model="dominoModel.speed"
+               min="{{speed.min}}"
+               max="{{speed.max}}" />
+    </div>
+</div>
