@@ -1,0 +1,18 @@
+ [
+     {
+            "id": 0,
+            "name": "7a",
+            "students": [
+                {
+                    "id": 0,
+                    "name": "Vasia Pupkin",
+                    "gpa":4.8
+                },
+                {
+                    "id": 1,
+                    "name": "Petia Vasechkin",
+                    "gpa":3.2
+                }
+            ]
+        }
+]

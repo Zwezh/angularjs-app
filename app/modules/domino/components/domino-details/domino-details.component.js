@@ -2,6 +2,9 @@ import template from './domino-details.component.html';
 import './domino-details.component.css';
 
 export default class DominoDetailsComponent {
+
+    static get $inject() { return ['$scope', 'dominoConstants', 'ModelService']; }
+
     constructor() {
         this.template = template;
         this.controller = ($scope, dominoConstants, ModelService) => {
@@ -27,4 +30,3 @@ export default class DominoDetailsComponent {
         };
     }
 }
-DominoDetailsComponent.$inject = ['$scope', 'dominoConstants', 'ModelService'];

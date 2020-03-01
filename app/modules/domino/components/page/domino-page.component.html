@@ -24,7 +24,7 @@
                                 <div class="domino-face-container"
                                      ng-repeat="face in faceCollection"
                                      ng-click="onSelectAvailableFace(face)">
-                                    <img src="{{getImageUrl(face)}}"
+                                    <img ng-src="{{getImageUrl(face)}}"
                                          class="domino-face" />
                                 </div>
                             </div>

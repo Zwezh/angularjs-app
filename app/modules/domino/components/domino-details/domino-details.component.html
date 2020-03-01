@@ -6,7 +6,7 @@
                  ng-style="getFaceSizeStyle()"
                  ng-click="onSelectPart(types.top)">
                 <img class="domino-face"
-                     src="{{getImageUrl(dominoModel.top)}}"
+                     ng-src="{{getImageUrl(dominoModel.top)}}"
                      ng-if="dominoModel.top" />
             </div>
             <div class="domino-face-container"
@@ -14,14 +14,14 @@
                  ng-click="onSelectPart(types.bottom)">
                 <img class="domino-face"
                      ng-if="dominoModel.bottom"
-                     src="{{getImageUrl(dominoModel.bottom)}}" />
+                     ng-src="{{getImageUrl(dominoModel.bottom)}}" />
             </div>
         </div>
     </div>
     <div class="domino-setting">
         <label class="label-setting"
                for="size">Size</label>
-        <input class="field-setting"
+        <input class="custom-range field-setting"
                type="range"
                id="size"
                name="size"
@@ -32,7 +32,7 @@
     <div class="domino-setting">
         <label class="label-setting"
                for="speed">Speed</label>
-        <input class="field-setting"
+        <input class="custom-range field-setting"
                type="range"
                id="speed"
                name="speed"

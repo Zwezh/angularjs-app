@@ -3,13 +3,34 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    School calculator gpa page
+                    Average GPA: {{$ctrl.schoolModel.gpaAverage}}
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#"
-                       class="btn btn-primary">Go somewhere</a>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item"
+                            ng-repeat="grade in $ctrl.schoolModel.gradeCollection">
+                            <a class="nav-link"
+                               ng-class="{active:grade.id === $ctrl.schoolModel.selectedGrade.id}">
+                                <span ng-click="$ctrl.onSelectGrade(grade)">Grade {{grade.name}}</span>
+                                <button type="button"
+                                        class="close ml-2"
+                                        ng-click="$ctrl.onDeleteGrade(grade.id)"
+                                        aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="d-flex align-self-center">
+                            <button class="btn btn-primary btn-sm ml-2"
+                                    type="button"
+                                    ng-disabled="$ctrl.schoolModel.selectedGrade && !$ctrl.schoolModel.selectedGrade.name"
+                                    ng-click="$ctrl.onAddGrade()">Add</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-3"
+                     ng-if="$ctrl.schoolModel.gradeCollection.length">
+                    <school-calculator-grade grade="$ctrl.schoolModel.selectedGrade"></school-calculator-grade>
                 </div>
             </div>
         </div>

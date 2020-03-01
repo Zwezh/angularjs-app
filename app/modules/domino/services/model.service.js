@@ -1,5 +1,7 @@
 export default class ModelService {
 
+    static get $inject() { return ['DominoModel', 'dominoConstants']; }
+
     constructor(DominoModel, dominoConstants) {
         this._dominoModel = new DominoModel(dominoConstants);
         this.dominoConstants = dominoConstants;
@@ -13,4 +15,3 @@ export default class ModelService {
         return this.dominoConstants.urls.getFaceImageUrl.replace('{{face}}', face);
     }
 }
-ModelService.$inject = ['DominoModel', 'dominoConstants'];

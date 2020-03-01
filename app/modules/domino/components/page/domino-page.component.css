@@ -7,7 +7,7 @@
 }
 
 .available-faces-container {
-    width: 100px;
+    width: fit-content;
     box-sizing: border-box;
     padding: 20px;
     justify-content: center;

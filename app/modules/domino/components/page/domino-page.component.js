@@ -2,6 +2,9 @@ import template from './domino-page.component.html';
 import './domino-page.component.css';
 
 export default class DominoPageComponent {
+
+    static get $inject() { return ['$scope', 'dominoConstants', 'ModelService']; }
+
     constructor() {
         this.template = template;
         this.controller = ($scope, dominoConstants, ModelService) => {
@@ -16,4 +19,3 @@ export default class DominoPageComponent {
         };
     }
 }
-DominoPageComponent.$inject = ['$scope', 'dominoConstants', 'ModelService'];
