@@ -1,21 +1,36 @@
 import template from './domino-page.component.html';
 import './domino-page.component.css';
+class DominoPageComponent {
 
-export default class DominoPageComponent {
+    static get $inject() { return ['dominoConstants', 'ModelService', '$document']; }
 
-    static get $inject() { return ['$scope', 'dominoConstants', 'ModelService']; }
-
-    constructor() {
-        this.template = template;
-        this.controller = ($scope, dominoConstants, ModelService) => {
-            $scope.dominoModel = ModelService.dominoModel;
-            $scope.faceCollection = dominoConstants.faces;
-            $scope.rotates = dominoConstants.rotates;
-            $scope.getImageUrl = face => ModelService.getImageUrl(face);
-            $scope.onRotateDomino = rotate => { $scope.dominoModel.angle = $scope.dominoModel.angle + rotate; };
-            $scope.onNewDomino = () => { $scope.dominoModel.resetFaces(); }
-            $scope.onSelectAvailableFace = value => { $scope.dominoModel[$scope.dominoModel.selectedFace] = value; }
-            $scope.getDisableFacesClass = () => $scope.dominoModel.selectedFace ? '' : 'domino-faces-lock';
-        };
+    constructor(dominoConstants, modelService, $document) {
+        $document[0].title = 'Domino playground';
+        this.modelService = modelService;
+        this.dominoModel = modelService.dominoModel;
+        this.faceCollection = dominoConstants.faces;
+        this.rotates = dominoConstants.rotates;
     }
+
+    getImageUrl(face) {
+        return this.modelService.getImageUrl(face);
+    }
+    onRotateDomino(rotate) {
+        this.dominoModel.angle = this.dominoModel.angle + rotate;
+    }
+    onNewDomino() {
+        this.dominoModel.resetFaces();
+    }
+    onSelectAvailableFace(value) {
+        this.dominoModel[this.dominoModel.selectedFace] = value;
+    }
+    getDisableFacesClass() {
+        return this.dominoModel.selectedFace ? '' : 'domino-faces-lock';
+    }
+}
+
+export default {
+    template: template,
+    controller: DominoPageComponent,
+    bindToController: true
 }

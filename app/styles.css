@@ -21,3 +21,23 @@
 .view-animate.ng-leave.ng-leave-active {
     opacity: 0;
 }
+
+
+.loop.ng-move,
+.loop.ng-enter,
+.loop.ng-leave {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.loop.ng-leave.ng-leave-active,
+.loop.ng-move,
+.loop.ng-enter {
+  opacity:0;
+}
+
+.loop.ng-leave,
+.loop.ng-move.ng-move-active,
+.loop.ng-enter.ng-enter-active {
+  opacity:1;
+}

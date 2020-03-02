@@ -15,5 +15,5 @@ angular
         'ngAnimate'
     ])
     .config(appRouting)
-    .component('menuNavigation', new MenuNavigationComponent());
+    .component('menuNavigation', MenuNavigationComponent);
 

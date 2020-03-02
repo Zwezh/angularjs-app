@@ -5,13 +5,13 @@
                 <div class="card-header">
                     <button type="button"
                             class="btn btn-outline-dark"
-                            ng-click="onRotateDomino(rotates.toRight)">&#8624;</button>
+                            ng-click="$ctrl.onRotateDomino($ctrl.rotates.toLeft)">&#8624;</button>
                     <button type="button"
                             class="btn btn-dark"
-                            ng-click="onNewDomino()">New</button>
+                            ng-click="$ctrl.onNewDomino()">New</button>
                     <button type="button"
                             class="btn btn-outline-dark"
-                            ng-click="onRotateDomino(rotates.toRight)">&#8625;</button>
+                            ng-click="$ctrl.onRotateDomino($ctrl.rotates.toRight)">&#8625;</button>
                 </div>
                 <div class="card-body">
                     <div class="domino-container">
@@ -20,11 +20,11 @@
                         </div>
                         <div class="available-faces-container">
                             <div class="domino-faces"
-                                 ng-class="getDisableFacesClass()">
+                                 ng-class="$ctrl.getDisableFacesClass()">
                                 <div class="domino-face-container"
-                                     ng-repeat="face in faceCollection"
-                                     ng-click="onSelectAvailableFace(face)">
-                                    <img ng-src="{{getImageUrl(face)}}"
+                                     ng-repeat="face in $ctrl.faceCollection"
+                                     ng-click="$ctrl.onSelectAvailableFace(face)">
+                                    <img ng-src="{{$ctrl.getImageUrl(face)}}"
                                          class="domino-face" />
                                 </div>
                             </div>

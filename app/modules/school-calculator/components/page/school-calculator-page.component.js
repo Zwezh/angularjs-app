@@ -2,9 +2,10 @@ import template from './school-calculator-page.component.html';
 import SchoolModel from '../../models/school.model';
 class SchoolCalculatorPageComponent {
 
-    static get $inject() { return ['ResourceService']; }
+    static get $inject() { return ['ResourceService', '$document']; }
 
-    constructor(ResourceService) {
+    constructor(ResourceService, $document) {
+        $document[0].title = 'School GPA calculator';
         this.schoolModel = new SchoolModel(ResourceService);
         this.selectedGrade = null;
         this.schoolModel.loadGrades();

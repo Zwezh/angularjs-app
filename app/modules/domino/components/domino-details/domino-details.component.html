@@ -1,20 +1,20 @@
 <div class="domino-details">
     <div class="domino"
-         ng-style="getDominoRotation()">
+         ng-style="$ctrl.getDominoRotation()">
         <div class="domino-faces">
             <div class="domino-face-container"
-                 ng-style="getFaceSizeStyle()"
-                 ng-click="onSelectPart(types.top)">
+                 ng-style="$ctrl.getFaceSizeStyle()"
+                 ng-click="$ctrl.onSelectPart($ctrl.types.top)">
                 <img class="domino-face"
-                     ng-src="{{getImageUrl(dominoModel.top)}}"
-                     ng-if="dominoModel.top" />
+                     ng-src="{{$ctrl.getImageUrl($ctrl.dominoModel.top)}}"
+                     ng-if="$ctrl.dominoModel.top" />
             </div>
             <div class="domino-face-container"
-                 ng-style="getFaceSizeStyle()"
-                 ng-click="onSelectPart(types.bottom)">
+                 ng-style="$ctrl.getFaceSizeStyle()"
+                 ng-click="$ctrl.onSelectPart($ctrl.types.bottom)">
                 <img class="domino-face"
-                     ng-if="dominoModel.bottom"
-                     ng-src="{{getImageUrl(dominoModel.bottom)}}" />
+                     ng-if="$ctrl.dominoModel.bottom"
+                     ng-src="{{$ctrl.getImageUrl($ctrl.dominoModel.bottom)}}" />
             </div>
         </div>
     </div>
@@ -25,9 +25,9 @@
                type="range"
                id="size"
                name="size"
-               ng-model="dominoModel.size"
-               min="{{size.min}}"
-               max="{{size.max}}" />
+               ng-model="$ctrl.dominoModel.size"
+               min="{{$ctrl.size.min}}"
+               max="{{$ctrl.size.max}}" />
     </div>
     <div class="domino-setting">
         <label class="label-setting"
@@ -36,8 +36,8 @@
                type="range"
                id="speed"
                name="speed"
-               ng-model="dominoModel.speed"
-               min="{{speed.min}}"
-               max="{{speed.max}}" />
+               ng-model="$ctrl.dominoModel.speed"
+               min="{{$ctrl.speed.min}}"
+               max="{{$ctrl.speed.max}}" />
     </div>
 </div>

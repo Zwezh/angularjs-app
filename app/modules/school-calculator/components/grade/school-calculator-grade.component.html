@@ -21,7 +21,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="student in $ctrl.grade.studentCollection">
+            <tr class="loop"
+                ng-repeat="student in $ctrl.grade.studentCollection">
                 <td>{{student.name}}</td>
                 <td>{{student.gpa}}</td>
                 <td>

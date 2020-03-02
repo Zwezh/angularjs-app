@@ -2,11 +2,9 @@
 
 import template from './menu-navigation.component.html';
 
-class MenuNavigationController {}
+class MenuNavigationComponent { }
 
-export default class MenuNavigationComponent {
-  constructor() {
-    this.template = template;
-    this.controller = MenuNavigationController;
-  }
+export default {
+    template: template,
+    controller: MenuNavigationComponent
 }

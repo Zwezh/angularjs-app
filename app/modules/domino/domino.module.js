@@ -10,8 +10,8 @@ import ModelService from './services/model.service';
 const DOMINO_MODULE = angular
     .module('domino.module', [])
     .constant('dominoConstants', dominoConstants)
-    .component('dominoPage', new DominoPageComponent())
-    .component('dominoDetails', new DominoDetailsComponent())
+    .component('dominoPage', DominoPageComponent)
+    .component('dominoDetails', DominoDetailsComponent)
     .factory('DominoModel', () => DominoModel)
     .service('ModelService', ModelService);
 
